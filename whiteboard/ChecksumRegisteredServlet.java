@@ -34,7 +34,7 @@ public class ChecksumRegisteredServlet extends SlingAllMethodsServlet {
 
   public static final String PARAMETER_MODULE = "module";
 
-  private static final String PROJECT_CHECK_SUM = "projectChecksSum";
+  private static final String PROJECT_CHECK_SUM = "projectCheckSum";
 
   private static final String APPLICATION_JSON_CHARSET_UTF_8 = "application/json;charset=UTF-8";
 

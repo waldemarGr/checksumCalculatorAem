@@ -15,6 +15,7 @@ import org.osgi.framework.FrameworkUtil;
 public interface Checksum extends Comparable<Checksum>{
 
   String BUNDLE_NAME = "Bundle-Name";
+  String META_INF_MANIFEST_MF = "META-INF/MANIFEST.MF";
 
   void init();
 
@@ -32,7 +33,7 @@ public interface Checksum extends Comparable<Checksum>{
 
     List<Long> checkSumsCrc32 = ((JarURLConnection) codeSource.getLocation().openConnection()).getJarFile()
         .stream()
-        .filter(file -> !file.getName().equals("META-INF/MANIFEST.MF"))
+        .filter(file -> !file.getName().equals(META_INF_MANIFEST_MF))
         .sorted(Comparator.comparing(ZipEntry::getName))
         .map(ZipEntry::getCrc)
         .collect(Collectors.toList());
