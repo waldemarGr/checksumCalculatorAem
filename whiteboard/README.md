@@ -5,20 +5,17 @@ This module is responsible for calculation of checksum from a given project modu
 Checksum is calculated from files contained in the jar file of the given module.
 The value of checksum and module name is set once while the module is being started or upload.
 
+
 IMPLEMENTATION
 --------------
 Compile this project to jar file: mvn clean install.
 Add dependencies to this jar.
 Implement ChecksumService.java (below is an example)  to modules to be calculated.
+Install bundle by http://localhost:4502/system/console/bundles 
 
 
 SAMPLE IMPLEMENTATION
 ---------------------
-1. Aem
-2. Knot (todo)
-3. Spring (todo)
-
-
 
 import java.io.IOException;
 import org.apache.commons.lang3.StringUtils;
