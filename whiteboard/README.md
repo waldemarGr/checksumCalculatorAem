@@ -16,7 +16,7 @@ Install bundle by http://localhost:4502/system/console/bundles
 
 SAMPLE IMPLEMENTATION
 ---------------------
-
+```
 import java.io.IOException;
 import org.apache.commons.lang3.StringUtils;
 import org.osgi.framework.Constants;
@@ -67,7 +67,7 @@ public class ChecksumService implements Checksum {
     return tmpChecksum;
   }
 }
-
+```
 
 TEST
 ----
