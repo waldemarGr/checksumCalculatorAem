@@ -1,18 +1,19 @@
 CHECKSUM 
 ========
-
+```
 This module is responsible for calculation of checksum from a given project module.
 Checksum is calculated from files contained in the jar file of the given module.
 The value of checksum and module name is set once while the module is being started or upload.
-
+```
 
 IMPLEMENTATION
 --------------
+```
 Compile this project to jar file: mvn clean install.
 Add dependencies to this jar.
 Implement ChecksumService.java (below is an example)  to modules to be calculated.
 Install bundle by http://localhost:4502/system/console/bundles 
-
+```
 
 SAMPLE IMPLEMENTATION
 ---------------------
@@ -71,6 +72,8 @@ public class ChecksumService implements Checksum {
 
 TEST
 ----
+```
 http://localhost:port/bin/checksum/allmodules - show all checksums
 http://localhost:port/bin/checksum/combined - show sum of all checksums
 http://localhost:port/bin/checksum/combined?module=moduleName&module=moduleName - show sum of selected checksums
+```
