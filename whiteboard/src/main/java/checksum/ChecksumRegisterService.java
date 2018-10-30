@@ -1,7 +1,5 @@
-package com.cognifide.bridge.whiteBoardTest;
+package checksum;
 
-import com.google.common.collect.Lists;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -38,6 +36,6 @@ public class ChecksumRegisterService implements ChecksumRegister {
 
   @Override
   public List<Checksum> getChecksum() {
-    return Collections.unmodifiableList(Lists.newArrayList(checksumServices));
+    return Collections.unmodifiableList(checksumServices);
   }
 }

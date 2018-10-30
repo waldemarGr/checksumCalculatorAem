@@ -1,4 +1,4 @@
-package com.cognifide.bridge.whiteBoardTest;
+package checksum;
 
 import java.util.List;
 

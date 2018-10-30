@@ -1,10 +1,8 @@
-package com.cognifide.bridge.whiteBoardTest;
+package checksum;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,7 +23,7 @@ import org.osgi.service.component.annotations.Reference;
 public class ChecksumRegisteredListServlet extends SlingAllMethodsServlet {
 
   @SuppressWarnings("WeakerAccess")
-  public static final String CHECKSUM_PATH = "/bin/bridge/checksum/allmodules";
+  public static final String CHECKSUM_PATH = "/bin/checksum/allmodules";
 
   private static final String MODULE = "module";
 

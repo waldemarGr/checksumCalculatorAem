@@ -1,4 +1,24 @@
-package com.cognifide.bridge.whiteBoardTest;
+CHECKSUM 
+========
+
+This module is responsible for calculation of checksum from a given project module.
+Checksum is calculated from files contained in the jar file of the given module.
+The value of checksum and module name is set once while the module is being started or upload.
+
+IMPLEMENTATION
+--------------
+Compile this project to jar file: mvn clean install.
+Add dependencies to this jar.
+Implement ChecksumService.java (below is an example)  to modules to be calculated.
+
+
+SAMPLE IMPLEMENTATION
+---------------------
+1. Aem
+2. Knot (todo)
+3. Spring (todo)
+
+
 
 import java.io.IOException;
 import org.apache.commons.lang3.StringUtils;
@@ -16,11 +36,6 @@ import org.slf4j.LoggerFactory;
         Constants.SERVICE_VENDOR + "=Cognifide"
     }
 )
-/*
-* this service is responsible for initializing the calculation of checksum from a given project module.
-* It should be copied to each calculation module. Is a part of White Board Pattern
-* The value of checksum and module name is set once while the module is being started or upload
-* */
 public class ChecksumService implements Checksum {
 
   private static final Logger LOG = LoggerFactory.getLogger(ChecksumService.class);
@@ -45,21 +60,20 @@ public class ChecksumService implements Checksum {
     return modulesName;
   }
 
-
   private String geSafeChecksum() {
     String tmpChecksum = StringUtils.EMPTY;
-    try {
-      long startTime = System.currentTimeMillis();//todo for test only, Will delete
-      tmpChecksum = calculateChecksum();
-      long stopTime = System.currentTimeMillis();
-      long elapsedTime = stopTime - startTime;
-      LOG.info("Execution time for calculateChecksum: {} millis for {} module", elapsedTime, "bridge");
+    try {      
+      tmpChecksum = calculateChecksum();     
     } catch (IOException e) {
       LOG.error("Can not calculate checksum from jar file", e);
     }
     return tmpChecksum;
   }
-
-
-
 }
+
+
+TEST
+----
+http://localhost:port/bin/checksum/allmodules - show all checksums
+http://localhost:port/bin/checksum/combined - show sum of all checksums
+http://localhost:port/bin/checksum/combined?module=moduleName&module=moduleName - show sum of selected checksums

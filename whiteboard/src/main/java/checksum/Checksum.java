@@ -1,4 +1,4 @@
-package com.cognifide.bridge.whiteBoardTest;
+package checksum;
 
 import java.io.IOException;
 import java.net.JarURLConnection;
@@ -8,11 +8,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.FrameworkUtil;
 
-public interface Checksum extends Comparable<Checksum>{
+public interface Checksum extends Comparable<Checksum> {
 
   String BUNDLE_NAME = "Bundle-Name";
   String META_INF_MANIFEST_MF = "META-INF/MANIFEST.MF";
@@ -25,7 +24,7 @@ public interface Checksum extends Comparable<Checksum>{
 
   default String prepareModuleName() {
     Bundle bundle = FrameworkUtil.getBundle(getClass());
-    return bundle.getHeaders().get(BUNDLE_NAME).toString() + StringUtils.SPACE + bundle.getVersion();
+    return bundle.getHeaders().get(BUNDLE_NAME).toString() + " " + bundle.getVersion();
   }
 
   default String calculateChecksum() throws IOException {

@@ -1,4 +1,4 @@
-package com.cognifide.bridge.whiteBoardTest;
+package checksum;
 
 import com.google.gson.Gson;
 import java.io.IOException;
@@ -30,7 +30,7 @@ import org.slf4j.LoggerFactory;
 public class ChecksumRegisteredServlet extends SlingAllMethodsServlet {
 
   @SuppressWarnings("WeakerAccess")
-  public static final String CHECKSUM_PATH = "/bin/bridge/checksum/combined";
+  public static final String CHECKSUM_PATH = "/bin/checksum/combined";
 
   public static final String PARAMETER_MODULE = "module";
 
@@ -38,7 +38,7 @@ public class ChecksumRegisteredServlet extends SlingAllMethodsServlet {
 
   private static final String APPLICATION_JSON_CHARSET_UTF_8 = "application/json;charset=UTF-8";
 
-  private static final Logger LOG = LoggerFactory.getLogger(ChecksumService.class);
+  private static final Logger LOG = LoggerFactory.getLogger(ChecksumRegisteredServlet.class);
 
   public static final String CHECKSUM_0 = "0";
 
